@@ -1,2 +1,2 @@
 # Finite_State_Traffic_Light
-Implemented a traffic light controller using Verilog and a finite state machine (FSM) design approach. The project aimed to simulate the behavior of a traffic light system with proper sequencing and timing.
+This project showcases a traffic light controller implemented in Verilog. It utilizes a finite state machine (FSM) to control the sequencing and timing of the traffic lights. The code includes the Verilog module for the controller, along with a testbench for functional verification. This project serves as a practical example of digital design using Verilog and demonstrates the implementation of an FSM-based system.
