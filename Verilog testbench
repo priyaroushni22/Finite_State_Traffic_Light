@@ -1,0 +1,38 @@
+`timescale 1ns/1ps
+////////////////////////////////////////////////////////////////////////////////////////////
+/////////////Project Name: Finite State Trafic Light(testbench)/////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+module traffic_light_tb();
+  reg clk;
+  reg reset;
+  wire [2:0] light_A;
+  wire [2:0] light_B;
+
+  traffic_light uut (
+    .clk(clk),
+    .reset(reset),
+    .light_A(light_A),
+    .light_B(light_B)
+  );
+
+  initial begin
+    clk = 1'b0;
+    forever #50000 clk = ~clk;
+  end
+
+  initial begin
+    reset = 1'b0;
+    #100000;
+    reset = 1'b1;
+    #100000;
+    reset = 1'b0;
+    #100000;
+    $finish;
+  end
+
+  initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars(0, traffic_light_tb);
+  end
+
+endmodule
